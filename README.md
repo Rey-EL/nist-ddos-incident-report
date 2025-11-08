@@ -1,49 +1,56 @@
-# DDoS Incident Report: ICMP Flood Attack
+# Application of the NIST Cybersecurity Framework to a DDoS Incident
+
+This project demonstrates my ability to analyze a security incident and structure a formal report using the five functions of the **NIST Cybersecurity Framework**. The scenario involves a Distributed Denial-of-Service (DDoS) attack that disrupted an organization's network.
+
+---
 
 ## Executive Summary
 
-The organization experienced a Distributed Denial of Service (DDoS) attack that flooded the internal network with Internet Control Message Protocol (ICMP) packets. As a result, the network was out of service for approximately two hours. The incident was mitigated by blocking incoming `ICMP` packets, taking nonessential services offline, and restoring critical network services. A later investigation found that the `ICMP` flood entered through an unconfigured firewall.
+The organization experienced a DDoS attack that flooded the internal network with ICMP packets, causing a two-hour network outage. The root cause was an unconfigured firewall rule. The incident was mitigated by blocking ICMP traffic and taking non-essential services offline. This report breaks down the incident and response according to the NIST Cybersecurity Framework.
 
-## 1. Identify (The Attack)
+---
 
-*   **Attack Type:** `DDoS` attack using an `ICMP` packet flood.
-*   **Cause:** An unconfigured `firewall rule` allowed malicious `ICMP` packets into the network.
-*   **Impact:** Internal network services (file shares, email, internal web apps) became unresponsive for approximately two hours. No evidence of data integrity loss.
-*   **Affected Systems:** Perimeter firewall, edge router, core/distribution switches (high CPU), on-prem application servers, DNS/DHCP, and VPN concentrator.
+### 1. Identify: Attack Analysis
 
-## 2. Protect (Vulnerability Remediation)
+*   **Attack Type:** DDoS attack using an ICMP packet flood.
+*   **Root Cause:** An unconfigured firewall rule allowed malicious ICMP packets into the network.
+*   **Business Impact:** Internal network services (file shares, email, internal web apps) were unresponsive for approximately two hours. No evidence of data exfiltration or integrity loss was found.
+*   **Affected Systems:** Perimeter firewall, edge router, core switches, application servers, DNS/DHCP servers, and VPN concentrator.
 
-To address this vulnerability and strengthen network protection, the team implemented:
+### 2. Protect: Vulnerability Remediation
 
-*   A new `firewall rule` to limit the rate of incoming `ICMP` packets.
-*   Source `IP address verification` on the firewall to check for spoofed `IP addresses`.
+To prevent a recurrence, the following protective controls were implemented:
+*   A new firewall rule was deployed to rate-limit incoming ICMP packets.
+*   Source IP address verification (anti-spoofing) was enabled on the perimeter firewall.
 
-## 3. Detect (Future Detection Improvements)
+### 3. Detect: Future Detection Capabilities
 
-To improve detection of similar attacks in the future, the organization implemented:
+To improve the timely detection of similar attacks, the following systems were implemented:
+*   Network monitoring software to baseline traffic patterns and detect anomalies.
+*   An Intrusion Detection and Prevention System (IDS/IPS) configured to filter and alert on suspicious ICMP traffic.
+*   SIEM alerts tuned to trigger on sudden ICMP volume spikes and traffic from untrusted sources.
 
-*   Network monitoring software to detect abnormal traffic patterns.
-*   An `Intrusion Detection and Prevention System (IDS/IPS)` to filter suspicious `ICMP` traffic.
-*   `SIEM alerts` configured for sudden `ICMP volume spikes` and traffic from non-trusted sources.
+### 4. Respond: Incident Response Actions
 
-## 4. Respond (Incident Response Actions)
+During the incident, the team took the following immediate actions:
+*   **Containment:** Blocked all incoming ICMP packets at the network edge.
+*   **Stabilization:** Took non-critical services offline to preserve system resources.
+*   **Coordination:** Assigned formal incident response roles (Incident Commander, Network Lead, etc.).
+*   **Preservation:** Collected and preserved evidence, including network flow records and firewall/IDS logs.
 
-During the incident, the team responded by:
+### 5. Recover: Service Restoration Process
 
-*   Blocking incoming `ICMP` packets to stop the traffic flood.
-*   Taking non-critical services offline to preserve system stability.
-*   Assigning roles: Incident Commander, Network Lead, Comms Lead, and Scribe.
-*   Preserving evidence, including flow records and `firewall/IDS logs`.
+After containing the threat, the recovery process involved:
+*   Restoring and verifying critical network services (DNS, DHCP, VPN).
+*   Validating core network device configurations against known-good backups.
+*   Performing a staged re-enabling of all services while monitoring for instability.
 
-## 5. Recover (Recovery Process)
+---
 
-After containing the attack, the organization:
+## Summary of Skills Demonstrated
 
-*   Restored affected critical network services to normal operation.
-*   Verified that network services were functioning properly.
-*   Restored core network devices from verified configuration backups.
-*   Re-enabled critical services (`DNS`, `DHCP`, `VPN`, etc.) in a staged manner.
-
-## Reflections / Key Takeaways
-
-This incident demonstrated how a single unconfigured firewall can lead to major network disruption. Implementing proper `firewall configurations`, consistent monitoring, and periodic audits are essential. The organization should develop a formal `incident response playbook` and conduct periodic tabletop exercises to practice a coordinated response.
+This exercise showcases understanding and application of:
+*   **Incident Analysis:** Deconstructing a security incident to identify the attack vector, root cause, and business impact.
+*   **NIST Cybersecurity Framework:** Structuring an incident report and response plan according to the five core functions (Identify, Protect, Detect, Respond, Recover).
+*   **Network Security:** Recommending specific technical controls like firewall rules, rate-limiting, and IDS/IPS configurations.
+*   **Incident Response & Recovery:** Outlining the formal steps required to contain a threat, respond effectively, and restore services.
