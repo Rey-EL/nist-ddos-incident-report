@@ -1,4 +1,4 @@
-# Application of the NIST Cybersecurity Framework to a DDoS Incident
+# nist-ddos-incident-report
 
 This project demonstrates my ability to analyze a security incident and structure a formal report using the five functions of the **NIST Cybersecurity Framework**. The scenario involves a Distributed Denial-of-Service (DDoS) attack that disrupted an organization's network.
 
