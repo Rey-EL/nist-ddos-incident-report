@@ -65,7 +65,7 @@ This incident report underscores the critical importance of maintaining system a
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the [MIT License](./LICENSE.md) - see the LICENSE.md file for details.
 
 ---
 
