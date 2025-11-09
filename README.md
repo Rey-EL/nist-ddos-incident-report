@@ -60,3 +60,15 @@ This exercise showcases understanding and application of:
 ## Security Context
 
 This incident report underscores the critical importance of maintaining system availability, a core component of the CIA (Confidentiality, Integrity, Availability) triad. DDoS attacks, while primarily impacting availability, can also serve as a smokescreen for more sophisticated attacks aimed at exploiting other vulnerabilities, including those found in the OWASP Top 10 (e.g., data exfiltration facilitated by a distracted security team). Effective incident response, as outlined by the NIST framework, is crucial for mitigating the immediate impact of such attacks and preventing further compromise.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+---
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or want to enhance the report, please feel free to open an issue or submit a pull request.
