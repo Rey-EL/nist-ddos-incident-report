@@ -54,3 +54,9 @@ This exercise showcases understanding and application of:
 *   **NIST Cybersecurity Framework:** Structuring an incident report and response plan according to the five core functions (Identify, Protect, Detect, Respond, Recover).
 *   **Network Security:** Recommending specific technical controls like firewall rules, rate-limiting, and IDS/IPS configurations.
 *   **Incident Response & Recovery:** Outlining the formal steps required to contain a threat, respond effectively, and restore services.
+
+---
+
+## Security Context
+
+This incident report underscores the critical importance of maintaining system availability, a core component of the CIA (Confidentiality, Integrity, Availability) triad. DDoS attacks, while primarily impacting availability, can also serve as a smokescreen for more sophisticated attacks aimed at exploiting other vulnerabilities, including those found in the OWASP Top 10 (e.g., data exfiltration facilitated by a distracted security team). Effective incident response, as outlined by the NIST framework, is crucial for mitigating the immediate impact of such attacks and preventing further compromise.
